@@ -1,0 +1,11 @@
+
+.env*
+!.env.example
+.local-credentials.txt
+data/*.sqlite*
+.next/
+node_modules/
+*.tsbuildinfo
+test-results/
+playwright-report/
+.verification/

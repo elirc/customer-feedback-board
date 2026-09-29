@@ -1,0 +1,147 @@
+{
+  "users": [
+    { "id": "fb-user-customer", "name": "Noah Garcia", "role": "customer" },
+    { "id": "fb-user-moderator", "name": "Lena Park", "role": "moderator" },
+    { "id": "fb-user-pm", "name": "Marco Bell", "role": "product_manager" },
+    { "id": "fb-user-admin", "name": "Tina Wong", "role": "admin" }
+  ],
+  "posts": [
+    {
+      "id": "post-analytics",
+      "title": "Add weekly analytics digests for followed ideas",
+      "slug": "weekly-analytics-digests",
+      "body": "We want a digest that summarizes vote trends, new comments, and status changes for ideas we follow.",
+      "categoryId": "cat-reporting",
+      "tagIds": ["tag-dashboard", "tag-notifications"],
+      "authorId": "fb-user-customer",
+      "status": "Planned",
+      "visibility": "public",
+      "duplicateOfPostId": null,
+      "commentsLocked": false,
+      "hiddenAt": null,
+      "createdAt": "2026-03-10T12:00:00.000Z",
+      "updatedAt": "2026-03-30T18:00:00.000Z",
+      "lastActivityAt": "2026-03-30T18:00:00.000Z"
+    },
+    {
+      "id": "post-mobile",
+      "title": "Improve mobile comment composer and voting layout",
+      "slug": "improve-mobile-comment-composer",
+      "body": "On smaller screens, long comment threads and the vote area feel cramped and hard to scan.",
+      "categoryId": "cat-uiux",
+      "tagIds": ["tag-mobile"],
+      "authorId": "fb-user-customer",
+      "status": "Under Review",
+      "visibility": "public",
+      "duplicateOfPostId": null,
+      "commentsLocked": false,
+      "hiddenAt": null,
+      "createdAt": "2026-03-18T09:30:00.000Z",
+      "updatedAt": "2026-03-28T14:20:00.000Z",
+      "lastActivityAt": "2026-03-28T14:20:00.000Z"
+    },
+    {
+      "id": "post-release-note-links",
+      "title": "Link shipped ideas directly to release notes",
+      "slug": "link-shipped-ideas-to-release-notes",
+      "body": "When an item moves to shipped, give admins a place to attach the related changelog or release note entry.",
+      "categoryId": "cat-reporting",
+      "tagIds": ["tag-roadmap"],
+      "authorId": "fb-user-customer",
+      "status": "Shipped",
+      "visibility": "public",
+      "duplicateOfPostId": null,
+      "commentsLocked": false,
+      "hiddenAt": null,
+      "createdAt": "2026-02-14T10:00:00.000Z",
+      "updatedAt": "2026-03-26T16:40:00.000Z",
+      "lastActivityAt": "2026-03-26T16:40:00.000Z"
+    }
+  ],
+  "votes": [
+    { "id": "vote-1", "postId": "post-analytics", "userId": "fb-user-customer", "createdAt": "2026-03-10T13:00:00.000Z" },
+    { "id": "vote-2", "postId": "post-mobile", "userId": "fb-user-customer", "createdAt": "2026-03-18T10:00:00.000Z" },
+    { "id": "vote-3", "postId": "post-analytics", "userId": "fb-user-moderator", "createdAt": "2026-03-11T09:00:00.000Z" }
+  ],
+  "comments": [
+    {
+      "id": "comment-1",
+      "postId": "post-mobile",
+      "authorId": "fb-user-customer",
+      "body": "A sticky composer or more spacing on mobile would help a lot.",
+      "parentCommentId": null,
+      "isHidden": false,
+      "createdAt": "2026-03-18T10:05:00.000Z",
+      "updatedAt": "2026-03-18T10:05:00.000Z"
+    }
+  ],
+  "follows": [
+    { "id": "follow-1", "postId": "post-analytics", "userId": "fb-user-customer", "createdAt": "2026-03-10T13:00:00.000Z" }
+  ],
+  "categories": [
+    { "id": "cat-uiux", "name": "UI/UX", "description": "Interface and usability improvements.", "displayOrder": 1 },
+    { "id": "cat-reporting", "name": "Reporting", "description": "Dashboards, exports, and analytics.", "displayOrder": 2 },
+    { "id": "cat-notifications", "name": "Notifications", "description": "Email and in-app updates.", "displayOrder": 3 }
+  ],
+  "tags": [
+    { "id": "tag-mobile", "name": "mobile" },
+    { "id": "tag-roadmap", "name": "roadmap" },
+    { "id": "tag-dashboard", "name": "dashboard" },
+    { "id": "tag-notifications", "name": "notifications" }
+  ],
+  "flags": [
+    {
+      "id": "flag-1",
+      "postId": "post-mobile",
+      "createdBy": "fb-user-customer",
+      "reason": "duplicate",
+      "createdAt": "2026-03-18T10:10:00.000Z",
+      "status": "open"
+    }
+  ],
+  "moderationActions": [
+    {
+      "id": "mod-1",
+      "postId": "post-release-note-links",
+      "actionType": "status.changed",
+      "actorId": "fb-user-pm",
+      "details": "Marked shipped after release notes integration launched.",
+      "createdAt": "2026-03-26T16:40:00.000Z"
+    }
+  ],
+  "mergeHistory": [],
+  "officialUpdates": [
+    {
+      "id": "update-1",
+      "postId": "post-analytics",
+      "body": "Planned for Q2 as part of the notifications and reporting refresh.",
+      "createdBy": "fb-user-pm",
+      "createdAt": "2026-03-30T18:00:00.000Z"
+    }
+  ],
+  "internalNotes": [
+    {
+      "id": "internal-1",
+      "postId": "post-analytics",
+      "body": "Potential overlap with team digest settings work; confirm ownership with growth PM.",
+      "createdBy": "fb-user-pm",
+      "createdAt": "2026-03-30T18:05:00.000Z"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "notif-1",
+      "userId": "fb-user-customer",
+      "title": "Weekly analytics digests moved to Planned",
+      "body": "The product team marked this item as Planned.",
+      "isRead": false,
+      "createdAt": "2026-03-30T18:00:00.000Z"
+    }
+  ],
+  "settings": {
+    "allowGuestBrowsing": true,
+    "allowVoting": true,
+    "portalMode": "public",
+    "statuses": ["Open", "Under Review", "Planned", "In Progress", "Shipped", "Declined", "Duplicate"]
+  }
+}
