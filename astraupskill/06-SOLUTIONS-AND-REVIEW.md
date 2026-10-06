@@ -2,6 +2,14 @@
 
 Use this guide after attempting [the practice tasks](05-PRACTICE.md). It gives the reasoning a reviewer should expect, rather than a block of code to copy without understanding the boundaries.
 
+## Exercise 0: the version-check inventory
+
+Eight calls in seven branches: `settings` (line 98), `merge` source and target (179-180), `moderate` (232), `editPost` (253), `deletePost` (277), the shared `editComment`/`deleteComment` branch (355) and `status` (415). Commands without a version are either desired state (vote, follow: sending `enabled: true` twice is harmless) or create a new record (create post, comment), where there is no earlier version to be stale against. The creates are exactly the commands exercise 3 is about: they are not stale-safe *and* not retry-safe.
+
+## Exercise 5: the synchronous guard
+
+The reference test in chapter 5 is the solution. The review point is the second assertion: `assert.throws` alone would pass even if the guard ran *after* the write; re-reading `revision` proves nothing committed.
+
 ## Empty states should preserve the cause
 
 An empty filtered list and a forbidden guest view are different states. The service already tells you which one you are in (`src/modules/feedback/service.ts:493-498`):
@@ -16,7 +24,7 @@ return {
 };
 ```
 
-So the view's decision is a two-line one --- `guestBlocked` means "sign in", `total === 0` with a query means "no matches, clear your filters", and `total === 0` with no query means "nothing here yet, be the first". Use that information directly. Do not infer permission from `posts.length === 0`, because an authenticated user can legitimately have no matches. A clear-filter action should remove the search and status filters and reset pagination. Review the URL as well as the displayed message.
+So the view's decision is a two-line one --- `guestBlocked` means "sign in", an empty list with a query or status filter means "no matches, clear your filters", and an empty list with no filters means "nothing here yet, be the first". The page already renders the first two messages (`src/app/page.tsx:103-111`); exercise 1 adds the actions. Use that information directly. Do not infer permission from `posts.length === 0`, because an authenticated user can legitimately have no matches. A clear-filter action should remove the search and status filters and reset pagination. Review the URL as well as the displayed message.
 
 ## Draft import is a preview, not a remote command runner
 

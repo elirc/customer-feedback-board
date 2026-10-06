@@ -26,11 +26,11 @@ Keep the notebook in one shape, so two traces can be compared:
 
 ```text
 hop            : status form -> saveFeedback -> executeCommand -> transact -> COMMIT -> revalidatePath
-actor          : u_pm (product manager), resolved INSIDE the transaction by actor(db, user)
+actor          : fb-user-pm (role product_manager), resolved INSIDE the transaction by actor(db, user)
 captured version: 4   (read when the form rendered)
 current version : 4   (read inside the transaction)  -> match, so the write proceeds
-guards passed  : role=product, version match, post visible to actor, not hidden/duplicate
-writes         : post.status, post.version++, audit("post.status"), notification per eligible follower
+guards passed  : post visible to actor, canManageRoadmap(u), version match
+writes         : post.status, post.version++ (touch), audit("status.changed"), notification per eligible follower
 commit point   : db.exec("COMMIT") in src/server/store.ts
 after commit   : revalidatePath("/", "layout")  -- must not make the user retry
 observed       : notification appears for the customer; board shows Planned after reload

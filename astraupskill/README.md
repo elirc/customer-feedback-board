@@ -28,12 +28,12 @@ Write down the expected behavior before coding. A useful acceptance statement is
 | [02 concepts](02-CONCEPTS.md) | 60 min |
 | [03 worked change](03-WORKED-CHANGE.md) | 60 min (two browser tabs) |
 | [04 testing and debugging](04-TESTING-AND-DEBUGGING.md) | 60 min, plus one `npm run verify` run |
-| [05 practice](05-PRACTICE.md) | exercise 1: one session; exercise 2: one to two; exercises 3-4: multi-day stretch |
+| [05 practice](05-PRACTICE.md) | exercises 0 and 5: under an hour each; exercise 1: one session; exercise 2: one to two; exercises 3-4: multi-day stretch |
 | [06 solutions and review](06-SOLUTIONS-AND-REVIEW.md) | 40 min |
 | [07 trace lab](07-TRACE-LAB.md) | 45 min |
 | [VERIFICATION](VERIFICATION.md) | 20 min |
 
-Plan on four sessions for chapters 01-04 and 07, then as much time as you want to give exercises 1 and 2.
+Plan on four sessions for chapters 01-04 and 07, then as much time as you want to give exercises 0, 5, 1 and 2.
 
 ## Glossary
 

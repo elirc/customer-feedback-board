@@ -4,7 +4,7 @@ Run [the verification helper](../scripts/verify.ts) through `npm run verify`. It
 
 ## Read a test as a small specification
 
-Start with the stale-edit test in [workflow.test.ts](../tests/workflow.test.ts:258-272). It is twelve lines and it is a complete specification:
+Start with the stale-edit test in [workflow.test.ts](../tests/workflow.test.ts), lines 258-272. It is fifteen lines and it is a complete specification:
 
 ```ts
 test("stale post edit does not overwrite accepted content", async () => {
@@ -34,7 +34,7 @@ Before you believe any of the guarantees above, spend ten minutes making them fa
 
 1. In `src/modules/feedback/service.ts:253`, comment out `expected(p, cmd.version);` inside the `editPost` branch. Run `npm test`. Predict first: which tests fail? You should see the stale-edit test fail on its *second* assertion --- the reject no longer happens --- and that is precisely the assertion that distinguishes "returns an error" from "protects the data".
 2. Put it back, and instead change `db.exec("BEGIN IMMEDIATE")` in `src/server/store.ts:41` to `db.exec("BEGIN")`. Run the cross-process test. A deferred transaction takes its lock later, so the two workers can interleave their reads.
-3. Remove the `if (result instanceof Promise) throw ...` guard and make one command branch `async`. Watch a test that "passes" while committing nothing.
+3. Remove the `if (result instanceof Promise) throw ...` guard and make one command branch `async`. Predict what happens to the revision. Exercise 5 in chapter 5 turns this experiment into a permanent test, since no existing test covers the guard.
 
 Restore each change before moving on, and write down what failed and what the message was. A guarantee you have never seen fail is a guarantee you are taking on trust.
 

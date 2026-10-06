@@ -54,7 +54,7 @@ function expected(record: { version: number }, value: number) {
 }
 ```
 
-and nine command branches call it before mutating. In `editPost` (`service.ts:251-267`):
+and it is called eight times, from seven command branches, before they mutate (merge checks both its source and its target; exercise 0 has you find them all). In `editPost` (`service.ts:251-267`):
 
 ```ts
 if (cmd.action === "editPost") {
